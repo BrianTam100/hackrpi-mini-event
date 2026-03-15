@@ -1,9 +1,396 @@
 <!DOCTYPE html>
 <html>
+<head>
+<link rel="stylesheet" href="styles.css">
+</head>
 <body>
+<title>SIS Pro Max Enterprise</title>
+<marquee behavior="alternate" scrollamount="15"><h1>Welcome!</h1></marquee>
 
-<h1>My First Heading</h1>
-<p>My first paragraph.</p>
+<img src="guy.jpg" id="guy" style="position:fixed;width:300px;animation:guy-spin 3s linear infinite, guy-drift 6s ease-in-out infinite;z-index:99998;pointer-events:none;top:30%;left:40%;border:8px solid lime;box-shadow:0 0 40px yellow;" />
 
+<blink><p style="font-size:8px;color:red;">⚠ REGISTRATION CLOSES IN: <span id="timer">99:99:99</span> (system time may vary)</p></blink>
+
+<p style="font-size:40px;font-family:Wingdings;">Step <span style="font-size:8px;">47</span> of <span style="font-size:72px;">3</span></p>
+
+<!-- SECTION 1: Student Info -->
+<fieldset style="border: 13px dashed lime; background:purple; transform:rotate(2deg);">
+  <legend style="font-size:6px;">MANDATORY OPTIONAL INFORMATION (DO NOT FILL OUT)</legend>
+
+  <label style="font-size:30px;" for="eye_color">Eye Color (optional):</label>
+  <input type="text" id="eye_color" placeholder="Enter your 9-digit Registration PIN" style="width:8px;" required /><br>
+
+  <label style="font-size:6px;" for="student_id">STUDENT ID NUMBER (VERY IMPORTANT — THIS IS THE FIELD THAT MATTERS MOST ON THIS ENTIRE PAGE PLEASE READ CAREFULLY AND ENTER YOUR 8 DIGIT STUDENT ID EXACTLY AS IT APPEARS ON YOUR STUDENT ID CARD ISSUED BY THE REGISTRAR'S OFFICE DO NOT USE DASHES OR SPACES):</label>
+  <input type="email" id="student_id" placeholder="First Name" /><br>
+
+  <label for="grad_year">Graduation Year:</label>
+  <input type="number" id="grad_year" min="1347" max="1849" value="1523" /><br>
+
+  <label for="credits">Desired Credit Hours:</label>
+  <input type="range" id="credits" min="0" max="0.5" step="0.001" value="0.247" />
+  <span id="credit_display">0.247 credits</span><br>
+
+  <label for="gpa">Current GPA (enter as Roman numerals):</label>
+  <input type="text" id="gpa" placeholder="e.g. III.MMCDXLVII" /><br>
+</fieldset>
+
+<br><br>
+
+<!-- SECTION 2: Major (already existed) -->
+<label for="name">Major:</label>
+<select name="majors" id="majors">
+  <option value="accounting">Accounting</option>
+  <option value="actuarial_science">Actuarial Science</option>
+  <option value="advanced_sock_puppetry">Advanced Sock Puppetry</option>
+  <option value="advanced_squirrel_communication">Advanced Squirrel Communication</option>
+  <option value="advanced_underwater_basket_weaving">Advanced Underwater Basket Weaving</option>
+  <option value="advertising">Advertising</option>
+  <option value="aerospace_engineering">Aerospace Engineering</option>
+  <option value="african_american_studies">African American Studies</option>
+  <option value="african_studies">African Studies</option>
+  <option value="agribusiness">Agribusiness</option>
+  <option value="agricultural_economics">Agricultural Economics</option>
+  <option value="agricultural_engineering">Agricultural Engineering</option>
+  <option value="agriculture">Agriculture</option>
+  <option value="american_studies">American Studies</option>
+  <option value="animation">Animation</option>
+  <option value="animal_science">Animal Science</option>
+  <option value="anthropology">Anthropology</option>
+  <option value="applied_mathematics">Applied Mathematics</option>
+  <option value="applied_physics">Applied Physics</option>
+  <option value="applied_sarcasm">Applied Sarcasm</option>
+  <option value="arabic">Arabic</option>
+  <option value="architecture">Architecture</option>
+  <option value="art_history">Art History</option>
+  <option value="art_therapy">Art Therapy</option>
+  <option value="asian_american_studies">Asian American Studies</option>
+  <option value="asian_studies">Asian Studies</option>
+  <option value="astrophysics">Astrophysics</option>
+  <option value="astronomy">Astronomy</option>
+  <option value="athletic_training">Athletic Training</option>
+  <option value="atmospheric_science">Atmospheric Science</option>
+  <option value="audiology">Audiology</option>
+  <option value="aviation">Aviation</option>
+  <option value="biochemistry">Biochemistry</option>
+  <option value="bioengineering">Bioengineering</option>
+  <option value="bioinformatics">Bioinformatics</option>
+  <option value="biology">Biology</option>
+  <option value="biomedical_engineering">Biomedical Engineering</option>
+  <option value="biophysics">Biophysics</option>
+  <option value="botany">Botany</option>
+  <option value="business_administration">Business Administration</option>
+  <option value="chemical_engineering">Chemical Engineering</option>
+  <option value="chemistry">Chemistry</option>
+  <option value="child_development">Child Development</option>
+  <option value="chinese">Chinese</option>
+  <option value="civil_engineering">Civil Engineering</option>
+  <option value="classics">Classics</option>
+  <option value="clinical_laboratory_science">Clinical Laboratory Science</option>
+  <option value="cognitive_science">Cognitive Science</option>
+  <option value="communications">Communications</option>
+  <option value="comparative_martian_poetry">Comparative Martian Poetry</option>
+  <option value="computer_engineering">Computer Engineering</option>
+  <option value="computer_science">Computer Science</option>
+  <option value="conflict_resolution">Conflict Resolution</option>
+  <option value="construction_management">Construction Management</option>
+  <option value="creative_writing">Creative Writing</option>
+  <option value="criminal_justice">Criminal Justice</option>
+  <option value="criminology">Criminology</option>
+  <option value="culinary_arts">Culinary Arts</option>
+  <option value="cybersecurity">Cybersecurity</option>
+  <option value="dairy_science">Dairy Science</option>
+  <option value="dance">Dance</option>
+  <option value="data_science">Data Science</option>
+  <option value="dental_hygiene">Dental Hygiene</option>
+  <option value="digital_media">Digital Media</option>
+  <option value="disability_studies">Disability Studies</option>
+  <option value="drama_and_theater_arts">Drama and Theater Arts</option>
+  <option value="early_childhood_education">Early Childhood Education</option>
+  <option value="ecology">Ecology</option>
+  <option value="economics">Economics</option>
+  <option value="education">Education</option>
+  <option value="electrical_engineering">Electrical Engineering</option>
+  <option value="emergency_management">Emergency Management</option>
+  <option value="english">English</option>
+  <option value="entrepreneurship">Entrepreneurship</option>
+  <option value="environmental_engineering">Environmental Engineering</option>
+  <option value="environmental_health">Environmental Health</option>
+  <option value="environmental_policy">Environmental Policy</option>
+  <option value="environmental_science">Environmental Science</option>
+  <option value="environmental_studies">Environmental Studies</option>
+  <option value="epidemiology">Epidemiology</option>
+  <option value="ethnic_studies">Ethnic Studies</option>
+  <option value="european_studies">European Studies</option>
+  <option value="event_management">Event Management</option>
+  <option value="exercise_science">Exercise Science</option>
+  <option value="fashion_design">Fashion Design</option>
+  <option value="fashion_merchandising">Fashion Merchandising</option>
+  <option value="film_and_photography">Film and Photography</option>
+  <option value="film_studies">Film Studies</option>
+  <option value="finance">Finance</option>
+  <option value="fine_arts">Fine Arts</option>
+  <option value="fire_science">Fire Science</option>
+  <option value="food_science">Food Science</option>
+  <option value="forensic_science">Forensic Science</option>
+  <option value="forestry">Forestry</option>
+  <option value="french">French</option>
+  <option value="galactic_paperclip_manufacturing">Galactic Paperclip Manufacturing</option>
+  <option value="game_design">Game Design</option>
+  <option value="gender_studies">Gender Studies</option>
+  <option value="geography">Geography</option>
+  <option value="geology">Geology</option>
+  <option value="geophysics">Geophysics</option>
+  <option value="german">German</option>
+  <option value="gerontology">Gerontology</option>
+  <option value="global_studies">Global Studies</option>
+  <option value="graphic_design">Graphic Design</option>
+  <option value="health_administration">Health Administration</option>
+  <option value="health_information_management">Health Information Management</option>
+  <option value="health_sciences">Health Sciences</option>
+  <option value="hebrew">Hebrew</option>
+  <option value="history">History</option>
+  <option value="history_of_future_inventions">History of Future Inventions</option>
+  <option value="homeland_security">Homeland Security</option>
+  <option value="horticulture">Horticulture</option>
+  <option value="hospitality_management">Hospitality Management</option>
+  <option value="human_resources">Human Resources</option>
+  <option value="industrial_design">Industrial Design</option>
+  <option value="industrial_engineering">Industrial Engineering</option>
+  <option value="information_systems">Information Systems</option>
+  <option value="information_technology">Information Technology</option>
+  <option value="interior_design">Interior Design</option>
+  <option value="intermediate_time_travel">Intermediate Time Travel</option>
+  <option value="international_business">International Business</option>
+  <option value="international_development">International Development</option>
+  <option value="international_relations">International Relations</option>
+  <option value="italian">Italian</option>
+  <option value="japanese">Japanese</option>
+  <option value="journalism">Journalism</option>
+  <option value="kinesiology">Kinesiology</option>
+  <option value="korean">Korean</option>
+  <option value="landscape_architecture">Landscape Architecture</option>
+  <option value="latin">Latin</option>
+  <option value="latin_american_studies">Latin American Studies</option>
+  <option value="lawn_flamingo_husbandry">Lawn Flamingo Husbandry</option>
+  <option value="liberal_arts">Liberal Arts</option>
+  <option value="library_science">Library Science</option>
+  <option value="linguistics">Linguistics</option>
+  <option value="management">Management</option>
+  <option value="management_information_systems">Management Information Systems</option>
+  <option value="marine_biology">Marine Biology</option>
+  <option value="marketing">Marketing</option>
+  <option value="materials_science">Materials Science and Engineering</option>
+  <option value="mathematics">Mathematics</option>
+  <option value="mechanical_engineering">Mechanical Engineering</option>
+  <option value="media_studies">Media Studies</option>
+  <option value="medieval_studies">Medieval Studies</option>
+  <option value="meteorology">Meteorology</option>
+  <option value="microbiology">Microbiology</option>
+  <option value="middle_eastern_studies">Middle Eastern Studies</option>
+  <option value="military_science">Military Science</option>
+  <option value="music">Music</option>
+  <option value="music_therapy">Music Therapy</option>
+  <option value="musical_theater">Musical Theater</option>
+  <option value="native_american_studies">Native American Studies</option>
+  <option value="natural_resources">Natural Resources</option>
+  <option value="neuroscience">Neuroscience</option>
+  <option value="nonprofit_management">Nonprofit Management</option>
+  <option value="nuclear_engineering">Nuclear Engineering</option>
+  <option value="nursing">Nursing</option>
+  <option value="nutrition">Nutrition</option>
+  <option value="occupational_therapy">Occupational Therapy</option>
+  <option value="oceanography">Oceanography</option>
+  <option value="operations_management">Operations Management</option>
+  <option value="optometry">Optometry</option>
+  <option value="organizational_behavior">Organizational Behavior</option>
+  <option value="paleontology">Paleontology</option>
+  <option value="paralegal_studies">Paralegal Studies</option>
+  <option value="peace_studies">Peace Studies</option>
+  <option value="pharmaceutical_sciences">Pharmaceutical Sciences</option>
+  <option value="philosophy">Philosophy</option>
+  <option value="photography">Photography</option>
+  <option value="physical_education">Physical Education</option>
+  <option value="physical_therapy">Physical Therapy</option>
+  <option value="physics">Physics</option>
+  <option value="political_science">Political Science</option>
+  <option value="portuguese">Portuguese</option>
+  <option value="pre_dental">Pre-Dental</option>
+  <option value="pre_law">Pre-Law</option>
+  <option value="pre_medicine">Pre-Medicine</option>
+  <option value="pre_veterinary">Pre-Veterinary</option>
+  <option value="professional_pillow_fighting">Professional Pillow Fighting</option>
+  <option value="psychology">Psychology</option>
+  <option value="public_administration">Public Administration</option>
+  <option value="public_health">Public Health</option>
+  <option value="public_relations">Public Relations</option>
+  <option value="quantum_mischief">Quantum Mischief</option>
+  <option value="real_estate">Real Estate</option>
+  <option value="recreation_management">Recreation Management</option>
+  <option value="recursive_napping">Recursive Napping</option>
+  <option value="religious_studies">Religious Studies</option>
+  <option value="renewable_energy">Renewable Energy</option>
+  <option value="risk_management">Risk Management</option>
+  <option value="robotics">Robotics</option>
+  <option value="russian">Russian</option>
+  <option value="science_policy">Science Policy</option>
+  <option value="silent_disco_management">Silent Disco Management</option>
+  <option value="social_work">Social Work</option>
+  <option value="sociology">Sociology</option>
+  <option value="software_engineering">Software Engineering</option>
+  <option value="soil_science">Soil Science</option>
+  <option value="spanish">Spanish</option>
+  <option value="special_education">Special Education</option>
+  <option value="speech_language_pathology">Speech-Language Pathology</option>
+  <option value="sports_management">Sports Management</option>
+  <option value="statistics">Statistics</option>
+  <option value="studio_art">Studio Art</option>
+  <option value="subatomic_wombat_husbandry">Subatomic Wombat Husbandry</option>
+  <option value="supply_chain_management">Supply Chain Management</option>
+  <option value="sustainability">Sustainability</option>
+  <option value="systems_engineering">Systems Engineering</option>
+  <option value="telecommunications">Telecommunications</option>
+  <option value="the_art_of_the_dad_joke">The Art of the Dad Joke</option>
+  <option value="the_philosophy_of_memes">The Philosophy of Memes</option>
+  <option value="the_science_of_goofing_off">The Science of Goofing Off</option>
+  <option value="theoretical_procrastination">Theoretical Procrastination</option>
+  <option value="tourism_management">Tourism Management</option>
+  <option value="toxicology">Toxicology</option>
+  <option value="unicorn_maintenance">Unicorn Maintenance</option>
+  <option value="urban_planning">Urban Planning</option>
+  <option value="urban_studies">Urban Studies</option>
+  <option value="veterinary_science">Veterinary Science</option>
+  <option value="web_design">Web Design</option>
+  <option value="wildlife_biology">Wildlife Biology</option>
+  <option value="women_s_studies">Women's Studies</option>
+  <option value="zoology">Zoology</option>
+  <option value="zombie_apocalypse_preparedness">Zombie Apocalypse Preparedness</option>
+</select>
+
+<br><br>
+
+<!-- SECTION 3: Course Search -->
+<fieldset style="border:5px solid yellow;background:navy;transform:rotate(-1.5deg);margin-left:300px;width:200px;">
+  <legend style="color:cyan;font-size:4px;">SEARCH FOR COURSES (DO NOT USE THIS TO SEARCH FOR COURSES)</legend>
+  <input type="text" id="course_search" placeholder="Enter Student ID" oninput="searchCourses()" style="width:12px;color:white;background:navy;" />
+  <div id="search_results" style="font-size:3px;color:yellow;max-height:20px;overflow:hidden;"></div>
+</fieldset>
+
+<!-- SECTION 4: Course Cart -->
+<div style="position:fixed;bottom:0;left:0;width:60px;height:40px;background:orange;overflow:hidden;z-index:9999;font-size:4px;">
+  <strong style="font-size:3px;">YOUR CART (expires in <span id="cart_timer">30</span>s):</strong>
+  <ul id="cart_list" style="font-size:3px;padding:0;margin:0;list-style:none;"></ul>
+</div>
+
+<!-- SECTION 5: Course Registration Table -->
+<p style="font-size:6px;color:yellow;">Please select your courses below. All times are in UTC-13. Seat availability updates every 72 hours.</p>
+
+<table style="border-collapse:collapse;transform:skewX(-5deg);background:maroon;font-size:6px;color:lime;">
+  <tr>
+    <th style="border:1px solid;font-size:20px;">CRN</th>
+    <th style="border:1px solid;font-size:3px;">COURSE TITLE (NOT THE REAL TITLE)</th>
+    <th style="border:1px solid;font-size:15px;">Credits</th>
+    <th style="border:1px solid;font-size:3px;">TIME</th>
+    <th style="border:1px solid;font-size:9px;">Professor</th>
+    <th style="border:1px solid;font-size:3px;">Open Seats (as of 2003)</th>
+    <th style="border:1px solid;font-size:9px;">Add</th>
+  </tr>
+  <tr>
+    <td style="border:1px solid;">99847</td>
+    <td style="border:1px solid;">INTRO TO ADVANCED CONCEPTS IN BEGINNING FUNDAMENTALS I</td>
+    <td style="border:1px solid;">3</td>
+    <td style="border:1px solid;">25:00 PM – 26:90 PM</td>
+    <td style="border:1px solid;">Dr. Urist McTeachface</td>
+    <td style="border:1px solid;color:red;">WAITLIST (0 open, 847 waiting)</td>
+    <td style="border:1px solid;"><button onclick="addCourse('INTRO TO ADVANCED CONCEPTS')" style="font-size:2px;width:1px;height:1px;overflow:hidden;opacity:0.1;">Add</button></td>
+  </tr>
+  <tr>
+    <td style="border:1px solid;">00001</td>
+    <td style="border:1px solid;">ADVANCED INTRO TO CONCEPTS IN INTERMEDIATE BASICS II</td>
+    <td style="border:1px solid;">0</td>
+    <td style="border:1px solid;">Monday (which Monday TBD)</td>
+    <td style="border:1px solid;">Staff</td>
+    <td style="border:1px solid;">1 (reserved for someone else)</td>
+    <td style="border:1px solid;"><button onclick="addCourse('ADVANCED INTRO TO CONCEPTS')" style="font-size:2px;width:1px;height:1px;overflow:hidden;opacity:0.1;">Add</button></td>
+  </tr>
+  <tr>
+    <td style="border:1px solid;">55555</td>
+    <td style="border:1px solid;">TOPICS IN TOPICS (SPECIAL TOPICS)</td>
+    <td style="border:1px solid;">-4</td>
+    <td style="border:1px solid;">TBA (will not be announced)</td>
+    <td style="border:1px solid;">Your Mom</td>
+    <td style="border:1px solid;">999 (all taken)</td>
+    <td style="border:1px solid;"><button onclick="addCourse('TOPICS IN TOPICS')" style="font-size:2px;width:1px;height:1px;overflow:hidden;opacity:0.1;">Add</button></td>
+  </tr>
+  <tr>
+    <td style="border:1px solid;">12345</td>
+    <td style="border:1px solid;">SEMINAR: READING THE SYLLABUS OF A COURSE ABOUT SYLLABI</td>
+    <td style="border:1px solid;">3</td>
+    <td style="border:1px solid;">Tuesdays &amp; alternate Thursdays, every other leap year</td>
+    <td style="border:1px solid;">Prof. Firstname Lastname</td>
+    <td style="border:1px solid;color:green;">OPEN (1 seat left)</td>
+    <td style="border:1px solid;"><button onclick="addCourse('SEMINAR: READING THE SYLLABUS')" style="font-size:2px;width:1px;height:1px;overflow:hidden;opacity:0.1;">Add</button></td>
+  </tr>
+</table>
+
+<!-- SECTION 6: Preferred Time (broken) -->
+<br>
+<label style="color:cyan;font-size:25px;" for="pref_time">preferred time (this does nothing):</label>
+<select id="pref_time" style="font-size:4px;">
+  <option>13:00 PM</option>
+  <option>25:30 AM</option>
+  <option>00:00 AM (midnight, noon, or both)</option>
+  <option>Whenever (mandatory attendance)</option>
+  <option>Asynchronous (must attend in person)</option>
+  <option>Synchronous (fully online, no exceptions)</option>
+  <option>Time does not apply to this section</option>
+</select>
+
+<!-- SECTION 7: Prerequisites CAPTCHA -->
+<br><br>
+<fieldset style="border:8px double red;background:teal;width:400px;margin-left:150px;transform:rotate(1deg);">
+  <legend style="font-size:6px;color:white;">PREREQUISITE VERIFICATION (Required for all courses including ones with no prerequisites)</legend>
+  <p style="font-size:9px;color:white;">To confirm you meet prerequisites, solve the following:</p>
+  <p style="font-size:7px;color:yellow;font-family:Wingdings;">∫∫∫ (x³ sin(eˣ)) / (ln(x² + π)) dx dy dz = ?</p>
+  <input type="text" placeholder="Answer (must be exact)" style="width:30px;font-size:5px;" id="prereq_answer"/>
+  <button onclick="checkPrereq()" style="font-size:4px;">Verify (you have 3 seconds)</button>
+  <p id="prereq_result" style="font-size:5px;color:red;"></p>
+</fieldset>
+
+<!-- SECTION 8: Terms and Conditions -->
+<br>
+<div id="tos_container" style="height:60px;overflow-y:scroll;border:1px solid;width:500px;font-size:4px;background:black;color:darkgray;" onscroll="addMoreTOS(this)">
+  <p id="tos_text">By registering for courses you agree to the following terms and conditions. The University reserves the right to change your courses, major, name, and date of birth at any time without notice. Students are responsible for all tuition, fees, and any damages incurred by the University including but not limited to: acts of god, spontaneous combustion, rogue Wi-Fi, and professor disappointment. Credit hours are non-transferable, non-refundable, and non-existent upon closer inspection. Registration does not guarantee enrollment. Enrollment does not guarantee classes. Classes do not guarantee learning. The University is not responsible for any existential crises arising from course selection. All time slots are subject to change to a time that conflicts with your other courses. By scrolling to the bottom of this document you agree that you have read all 847 pages. Keep scrolling...</p>
+</div>
+<br>
+<input type="checkbox" id="tos_check" disabled /> <label for="tos_check" style="font-size:5px;color:gray;">(scroll to bottom to enable) I have read and agree to all 847 pages of terms and conditions, the supplemental waiver, the FERPA acknowledgment, the roommate noise policy, the parking appeals addendum, and the unofficial squirrel feeding bylaw.</label>
+
+<!-- SECTION 9: Advisor Approval -->
+<br><br>
+<fieldset style="background:olive;border:3px dotted pink;transform:rotate(-2deg);">
+  <legend style="font-size:5px;">Advisor Approval Code (ask your advisor — advisors do not have this code)</legend>
+  <input type="password" placeholder="Advisor Code" style="font-size:4px;width:15px;" />
+  <button style="font-size:3px;" onclick="alert('Incorrect. Your advisor has been notified.')">Validate</button>
+</fieldset>
+
+<!-- SECTION 10: DO NOT CLICK -->
+<br>
+<button id="do_not_click" onclick="doNotClick()" style="font-size:6px;background:red;color:white;border:4px solid black;position:absolute;right:20px;top:20px;">
+  ⚠ DO NOT CLICK — Course Conflict Checker
+</button>
+
+<!-- SECTION 11: Progress Bar -->
+<br><br>
+<label style="font-size:6px;color:yellow;">Registration Progress:</label><br>
+<div style="width:300px;height:20px;border:2px solid white;background:black;position:relative;">
+  <div id="progress_bar" style="width:87%;height:100%;background:red;transition:width 0.5s;"></div>
+</div>
+<p style="font-size:4px;color:yellow;" id="progress_label">Loading... (87% — please wait, going backwards)</p>
+
+<!-- SECTION 12: Submit -->
+<br><br>
+<p style="font-size:3px;color:gray;">Note: clicking Submit will log you out. To re-register, call the Registrar's office between 3:17 AM and 3:19 AM on the third Wednesday of months containing the letter Q.</p>
+<input type="submit" value="Submit" />
+
+<script src="script.js"></script>
 </body>
 </html>
